@@ -60,7 +60,7 @@ class RamDiskBuilderGUI:
                 paths=path.split("/")
                 with open(path, "r") as f:
                     
-                    data = str(f.read())
+                    data = str(f.read()).replace("|","\xff")
 
                 # Liga ficheiros em memória (estilo ramdisk)
                 self.memory_buffer =self.memory_buffer +  "|"+paths[len(paths)-1]+"|" + data
